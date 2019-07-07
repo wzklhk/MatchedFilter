@@ -20,12 +20,12 @@ end
 sin_signal_noise = awgn(sin_signal, 5); % 向正弦波信号加入信噪比为5dB的高斯白噪声
 squ_signal_noise = awgn(squ_signal, 5); % 向方波信号加入信噪比为5dB的高斯白噪声
 
-fid = fopen('data/nsqu.txt', 'w');
+fid = fopen('data/nsin.txt', 'w');
 
-for i = 1:length(squ_signal_noise)
-    fprintf(fid, '%f %f\r\n', t(i), squ_signal_noise(i));
+for i = 1:length(sin_signal_noise)
+    fprintf(fid, '%f %f\r\n', t(i), sin_signal_noise(i));
 end
 
 fclose(fid);
 
-plot(t, squ_signal_noise);
+plot(t, sin_signal_noise);
