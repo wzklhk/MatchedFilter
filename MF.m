@@ -157,7 +157,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 axes(handles.axes3);
-plot(handles.t, handles.send_signal_autocorr(1:2:end));
+plot(2 * handles.t, handles.send_signal_autocorr(1:2:end));
 title('输入信号自相关');
 xlabel('t\s');
 ylabel('A');

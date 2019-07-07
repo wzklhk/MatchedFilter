@@ -2,7 +2,7 @@ close all;
 clear;
 clc;
 
-path = 'data/squ.txt';
+path = 'data/nsin.txt';
 [t, send_signal] = textread(path);
 fs = 1 / (t(2) - t(1)); % 抽样频率
 
@@ -37,19 +37,19 @@ set(gca, 'XLim', [-5, 5]);
 
 figure;
 plot(2 * t, receive_signal(1:2:end));
-title('输出信号');
+title('匹配滤波后的信号');
 xlabel('t/s');
 ylabel('A');
 
 figure;
 subplot(2, 1, 1);
-plot(t, send_signal_autocorr(1:2:end));
+plot(2 * t, send_signal_autocorr(1:2:end));
 title('输入信号自相关函数');
 xlabel('t/s');
 ylabel('A');
 subplot(2, 1, 2);
 plot(2 * t, receive_signal_autocorr(1:4:end));
-title('输出信号自相关函数');
+title('匹配滤波后信号自相关函数');
 xlabel('t/s');
 ylabel('A');
 
@@ -62,7 +62,7 @@ ylabel('A');
 set(gca, 'XLim', [-2, 2]);
 subplot(2, 1, 2);
 plot(f_receive_PSD_shift, abs(receive_signal_PSD));
-title('输出信号功率谱密度');
+title('匹配滤波后信号功率谱密度');
 xlabel('f/Hz');
 ylabel('A');
 set(gca, 'XLim', [-2, 2]);
