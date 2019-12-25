@@ -48,7 +48,7 @@ title('输入信号自相关函数');
 xlabel('t/s');
 ylabel('A');
 subplot(2, 1, 2);
-plot(2 * t, receive_signal_autocorr(1:4:end));
+plot(4 * t, receive_signal_autocorr(1:4:end));
 title('匹配滤波后信号自相关函数');
 xlabel('t/s');
 ylabel('A');
